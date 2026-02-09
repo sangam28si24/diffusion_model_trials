@@ -17,11 +17,11 @@
 This is a **Denoising Diffusion Probabilistic Model (DDPM)** for generating crystal structures from small datasets with physics-based validation.
 
 ### Key Features
-- ✅ Generates 3D periodic crystal structures
-- ✅ Validates physics constraints in real-time
-- ✅ Works with small datasets (10+ samples)
-- ✅ Complete time complexity analysis
-- ✅ Modular, extensible architecture
+-  Generates 3D periodic crystal structures
+-  Validates physics constraints in real-time
+-  Works with small datasets (10+ samples)
+-  Complete time complexity analysis
+-  Modular, extensible architecture
 
 ### Problem Statement
 Given a small dataset of crystal structures, learn to generate new, physically valid crystal structures with:
@@ -901,11 +901,11 @@ class E3EquivariantLayer(nn.Module):
 
 This implementation provides a **complete, working diffusion model** for crystal structure generation with:
 
-✅ **Full documentation** of algorithms and complexity
-✅ **Physics-based validation** for realistic outputs
-✅ **Modular design** for easy extension
-✅ **Small dataset support** (10+ samples)
-✅ **Comprehensive time analysis** at each step
+ **Full documentation** of algorithms and complexity
+ **Physics-based validation** for realistic outputs
+ **Modular design** for easy extension
+ **Small dataset support** (10+ samples)
+ **Comprehensive time analysis** at each step
 
 **Next Steps**:
 1. Scale to larger datasets (Materials Project)
@@ -940,15 +940,3 @@ q(xₜ | x₀) = ∫ q(xₜ | xₜ₋₁) q(xₜ₋₁ | x₀) dxₜ₋₁
 ```
 QED
 
-### B. Reverse Process Mean
-
-**Claim**: The optimal reverse process mean is μ*ₜ = (1/√αₜ)(xₜ - (βₜ/√(1-ᾱₜ))ε)
-
-**Proof**: See Ho et al. (2020), Appendix B.
-
----
-
-**Document Version**: 1.0  
-**Last Updated**: 2026-02-08  
-**Author**: Claude (Anthropic)  
-**License**: MIT

@@ -36,11 +36,12 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from typing import Tuple, List, Optional
 import json
+from datetime import datetime
 
-# Set random seeds for reproducibility
-torch.manual_seed(42)
-np.random.seed(42)
-
+# # Set random seeds for reproducibility
+# torch.manual_seed(42)
+# np.random.seed(42)
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
 class CrystalStructureDataset(Dataset):
     """
@@ -831,6 +832,8 @@ def main():
     print("-" * 80)
     print(f"Training complete! Final loss: {losses[-1]:.6f}")
     
+
+    
     # Plot training curve
     plt.figure(figsize=(10, 6))
     plt.plot(losses)
@@ -838,7 +841,7 @@ def main():
     plt.ylabel('Loss')
     plt.title('Training Loss Curve')
     plt.grid(True, alpha=0.3)
-    plt.savefig('/home/sangam/vsc/diffusion_material/training_loss.png', dpi=150, bbox_inches='tight')
+    plt.savefig(f'/home/sangam/vsc/diffusion_material/outputs/training_loss_{timestamp}_png', dpi=150, bbox_inches='tight')
     print("\nTraining curve saved to 'training_loss.png'")
     
     # Generate new structures
@@ -869,9 +872,9 @@ def main():
     gen_pos = generated[0].cpu().numpy()
     gen_pos = gen_pos[mask[0].cpu().numpy() > 0.5]  # Remove padding
     gen_lattice = lattice[0].cpu().numpy()
-    
+
     fig = visualize_crystal(gen_pos, gen_lattice, "Generated Crystal Structure")
-    plt.savefig('/home/sangam/vsc/diffusion_material/generated_crystal.png', dpi=150, bbox_inches='tight')
+    plt.savefig(f'/home/sangam/vsc/diffusion_material/outputs/generated_crystal_{timestamp}.png', dpi=150, bbox_inches='tight')
     print("Generated structure saved to 'generated_crystal.png'")
     
     # Also visualize a real structure for comparison
@@ -880,7 +883,7 @@ def main():
     real_lattice = sample_batch['lattice'][0].numpy()
     
     fig = visualize_crystal(real_pos, real_lattice, "Real Crystal Structure (Training Data)")
-    plt.savefig('/home/sangam/vsc/diffusion_materialreal_crystal.png', dpi=150, bbox_inches='tight')
+    plt.savefig(f'/home/sangam/vsc/diffusion_material/outputs/real_crystal_{timestamp}.png', dpi=150, bbox_inches='tight')
     print("Real structure saved to 'real_crystal.png'")
     
     print("\n" + "=" * 80)

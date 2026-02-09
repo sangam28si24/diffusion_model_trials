@@ -1,0 +1,62 @@
+DIFFUSION MODEL PROJECT - COMPLETE FILE LIST
+=============================================
+
+ Root Directory Files:
+├── diffusion_model_demo.ipynb    [31 KB] Main Jupyter notebook with complete implementation
+├── README.md                      [8.6 KB] Project overview and usage guide
+├── QUICK_START.md                 [7.7 KB] Non-technical beginner guide
+├── TECHNICAL_DOCS.md              [16 KB] Detailed technical documentation
+├── PROJECT_MANIFEST.md            [9.0 KB] Complete project documentation
+├── requirements.txt               [397 B] Python dependencies list
+├── INSTALL.sh                     [1.8 KB] Automated installation script
+└── .gitignore                     [523 B] Git ignore rules
+
+ Subdirectories:
+├── outputs/                       Empty (will contain generated images and data)
+│   └── .gitkeep                   Preserves directory in git
+├── models/                        Reserved for future neural network models
+│   └── .gitkeep                   Preserves directory in git
+└── utils/                         Reserved for utility scripts
+    └── .gitkeep                   Preserves directory in git
+
+ Total Files: 11 documentation/code files + 3 placeholder files
+ Total Size: ~75 KB (excluding generated outputs)
+
+ Key Files to Start With:
+1. QUICK_START.md     ← Start here if you're new to programming
+2. README.md          ← Overview and quick reference
+3. diffusion_model_demo.ipynb  ← Run this to generate art!
+
+ Technical Documentation:
+- TECHNICAL_DOCS.md   ← Algorithm details, complexity analysis
+- PROJECT_MANIFEST.md ← Complete project specification
+
+Setup:
+- requirements.txt    ← Install with: pip install -r requirements.txt
+- INSTALL.sh         ← Or run: ./INSTALL.sh (Linux/Mac)
+
+ Generated Output Files (after running notebook):
+The outputs/ directory will contain:
+- generated_art_[timestamp].png        Final artworks
+- diffusion_steps_[timestamp].png      Step-by-step visualization
+- numerical_analysis_[timestamp].png   Statistical plots
+- multiple_samples_[timestamp].png     Grid of 6 samples
+- numerical_data_[timestamp].csv       Numerical statistics
+
+Each run creates new timestamped files, so nothing is overwritten!
+
+File Formats:
+- .ipynb    Jupyter notebook (open with Jupyter)
+- .md       Markdown documentation (readable in any text editor)
+- .txt      Plain text (dependencies list)
+- .sh       Shell script (for Linux/Mac installation)
+- .png      Generated images (after running notebook)
+- .csv      Data files (can open in Excel)
+
+Quick Start Commands:
+1. Install dependencies:  pip install -r requirements.txt
+2. Launch notebook:       jupyter notebook diffusion_model_demo.ipynb
+3. In browser:           Cell → Run All
+4. View results:         Check outputs/ folder
+
+

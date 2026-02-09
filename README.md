@@ -1,17 +1,17 @@
 # Crystal Structure Diffusion Model - Hello World Project
 
-## 🎯 Project Overview
+## Project Overview
 
 This is a **complete, working implementation** of a physics-constrained diffusion model that generates crystal structures from small datasets. This "hello world" version demonstrates the core concepts of using diffusion models for materials science applications.
 
 ### Key Features
-- ✅ **Works with small datasets** (10+ samples)
-- ✅ **Physics-validated outputs** (minimum distance, periodic boundaries)
-- ✅ **Complete documentation** with time complexity analysis
-- ✅ **Pure NumPy implementation** (no PyTorch required)
-- ✅ **Visualizations** of training progress and generated structures
+-  **Works with small datasets** (10+ samples)
+-  **Physics-validated outputs** (minimum distance, periodic boundaries)
+-  **Complete documentation** with time complexity analysis
+-  **Pure NumPy implementation** (no PyTorch required)
+-  **Visualizations** of training progress and generated structures
 
-## 📁 Project Files
+## Project Files
 
 | File | Description | Lines of Code |
 |------|-------------|---------------|
@@ -22,7 +22,7 @@ This is a **complete, working implementation** of a physics-constrained diffusio
 | `real_crystal.png` | Real crystal from training data | - |
 | `README.md` | This file | ~200 |
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Requirements
 ```bash
@@ -69,7 +69,7 @@ Minimum distance found: 1.078 Å
 DEMO COMPLETE!
 ```
 
-## 🏗️ Architecture
+##  Architecture
 
 ### High-Level Pipeline
 ```
@@ -96,7 +96,7 @@ Crystals  x₀→x₁→...→xₜ      Train Model   xₜ→...→x₁→x₀  
 - Enforces periodic boundary conditions
 - Corrects violations via gradient-based repulsion
 
-## 📊 Algorithms & Time Complexity
+##  Algorithms & Time Complexity
 
 ### Complete Complexity Analysis
 
@@ -168,7 +168,7 @@ for iteration in range(max_iter):
     positions = positions % 1.0  # Enforce PBC
 ```
 
-## 🧪 Physics Constraints
+##  Physics Constraints
 
 ### 1. Minimum Interatomic Distance
 **Law:** Pauli Exclusion Principle
@@ -184,7 +184,7 @@ for iteration in range(max_iter):
 **Law:** Physical Reasonability
 **Constraint:** 0.5 ≤ ρ ≤ 20 g/cm³ (not enforced)
 
-## 📈 Results
+##  Results
 
 ### Training Curve
 ![Training Loss](training_loss.png)
@@ -196,15 +196,14 @@ The model converges to a loss of ~0.58 after 100 epochs, demonstrating successfu
 
 The generated structure shows:
 - **4 atoms** in FCC-like arrangement
-- **Minimum distance:** 1.078 Å (PASSED ✅)
-- **Valid periodic boundaries** (PASSED ✅)
-
+- **Minimum distance:** 1.078 Å 
+- **Valid periodic boundaries** 
 ### Real Training Data (For Comparison)
 ![Real Crystal](real_crystal.png)
 
 Original FCC structure from the training set showing the target distribution.
 
-## 🎓 Educational Value
+##  Educational Value
 
 This project demonstrates:
 
@@ -214,7 +213,7 @@ This project demonstrates:
 4. **Time Complexity Analysis** - Understanding computational costs
 5. **Materials Science** - Crystal structures and periodic boundaries
 
-## 🔬 Technical Details
+##  Technical Details
 
 ### Dataset
 The demo uses 10 crystal structures:
@@ -253,7 +252,7 @@ Linear(64 → 3) [predicted noise]
 - Layer 2: 64 × 64 + 64 = 4,160
 - Layer 3: 64 × 3 + 3 = 195
 
-## 🚧 Limitations & Future Work
+##  Limitations & Future Work
 
 ### Current Limitations
 1. **Small network** - Only 4,675 parameters
@@ -310,7 +309,7 @@ class E3EquivariantNetwork:
 - Crystallographic symmetry groups
 - Formation energy prediction
 
-## 📚 References
+##  References
 
 ### Key Papers
 
@@ -329,7 +328,7 @@ class E3EquivariantNetwork:
 - **ICSD:** Inorganic Crystal Structure Database
 - **COD:** Crystallography Open Database
 
-## 💡 Usage Examples
+##  Usage Examples
 
 ### Example 1: Train on Custom Dataset
 ```python
@@ -387,7 +386,7 @@ if not valid:
     print("Structure corrected!")
 ```
 
-## 🤝 Contributing
+##  Contributing
 
 This is a learning project! Possible contributions:
 - Add more physics constraints
@@ -397,32 +396,8 @@ This is a learning project! Possible contributions:
 - Implement faster sampling (DDIM)
 - Create interactive visualizations
 
-## 📝 License
 
-MIT License - Feel free to use for educational and research purposes.
-
-## 🙏 Acknowledgments
-
-- **Anthropic** for Claude AI assistance
-- **Ho et al. (2020)** for DDPM algorithm
-- **Materials Project** for crystal structure data
-- **NumPy & Matplotlib** communities
-
-## 📧 Contact
-
-For questions or discussions about this implementation, please refer to the comprehensive `DOCUMENTATION.md` file which contains:
-- Detailed mathematical formulations
-- Step-by-step algorithm explanations
-- Complete complexity proofs
-- Extension ideas and roadmap
-
----
-
-**Project Status:** ✅ Complete and Working  
-**Last Updated:** February 8, 2026  
-**Version:** 1.0 (Hello World Demo)
-
-## 📊 Summary Statistics
+##  Summary Statistics
 
 | Metric | Value |
 |--------|-------|
@@ -431,14 +406,9 @@ For questions or discussions about this implementation, please refer to the comp
 | **Dataset Size** | 10 structures |
 | **Training Epochs** | 100 |
 | **Final Loss** | 0.577884 |
-| **Physics Validation** | ✅ PASSED |
+| **Physics Validation** |  PASSED |
 | **Min Distance Found** | 1.078 Å |
 | **Code Lines** | ~660 (main) |
 | **Documentation Lines** | ~1000 |
 | **Total Project Lines** | ~2000 |
 
----
-
-**🎉 Thank you for exploring this crystal structure diffusion model!**
-
-This project demonstrates that powerful generative models can be built with simple implementations, clear documentation, and physics-based validation. Perfect for learning about diffusion models, materials science, and scientific machine learning!
