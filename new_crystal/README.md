@@ -76,11 +76,10 @@ This model **learns** from existing crystal structures and **generates** new one
 
 ---
 
-## 🔄 Usage Modes
+## Usage Modes
 
 ### Mode 1: Full Pipeline (Training + Generation)
 
-**When to use:**
 - First time running
 - Changed model architecture
 - Changed training data
@@ -89,7 +88,6 @@ This model **learns** from existing crystal structures and **generates** new one
 **Steps:**
 ```python
 # Run all cells (1-34) in order
-# Time: ~10-15 minutes
 ```
 
 **Outputs:**
@@ -102,7 +100,6 @@ This model **learns** from existing crystal structures and **generates** new one
 
 ### Mode 2: Generation Only (Using Trained Model)
 
-**When to use:**
 - Already trained once
 - Want multiple diverse structures
 - Quick generation
@@ -111,7 +108,7 @@ This model **learns** from existing crystal structures and **generates** new one
 ```python
 # 1. Train once (cells 1-11)
 # 2. Generate many times (cells 12-16)
-#    Each run: ~30 seconds
+
 ```
 
 **Outputs:**
@@ -123,7 +120,6 @@ This model **learns** from existing crystal structures and **generates** new one
 
 ### Mode 3: Batch Generation (Multiple Structures at Once)
 
-**When to use:**
 - Need many structures for analysis
 - Statistical studies
 - Publication-quality dataset
@@ -133,7 +129,6 @@ This model **learns** from existing crystal structures and **generates** new one
 # 1. Train once (cells 1-11)
 # 2. Set N_STRUCTURES in cell 30
 # 3. Run batch cells (30-32)
-#    Time: N × 30 seconds
 ```
 
 **Outputs:**
@@ -149,19 +144,16 @@ This model **learns** from existing crystal structures and **generates** new one
 
 ### Critical Understanding: You DON'T Need to Retrain!
 
-Many users ask: "Do I retrain every time I want a new structure?"
 
-**Answer: NO!**
-
-| Action | Training Needed? | Time |
-|--------|-----------------|------|
-| First run |  YES | ~10 min |
-| Generate 2nd structure |  NO | ~30 sec |
-| Generate 10th structure |  NO | ~30 sec |
-| Generate 100th structure |  NO | ~30 sec |
-| Change model size |  YES | ~10 min |
-| Add more training data |  YES | ~10 min |
-| Different hyperparameters |  YES | ~10 min |
+| Action | Training Needed? |
+|--------|-----------------|
+| First run |  YES |
+| Generate 2nd structure |  NO |
+| Generate 10th structure |  NO |
+| Generate 100th structure |  NO |
+| Change model size |  YES | 
+| Add more training data |  YES |
+| Different hyperparameters |  YES |
 
 ### Why Multiple Structures Without Retraining?
 
@@ -188,16 +180,6 @@ Structure 3: Start with noise C → Denoise → Structure C
 N_STRUCTURES = 10  # Change this number!
 SAVE_TO_FILE = True  # Save to .npz files
 ```
-
-### Recommended Batch Sizes
-
-| Purpose | N Structures | Time | Use Case |
-|---------|-------------|------|----------|
-| Quick test | 3-5 | 2 min | Verify model works |
-| Initial analysis | 10 | 5 min | Check diversity |
-| Statistical study | 20-50 | 15-30 min | Distributions |
-| Publication | 100+ | 1+ hour | Robust statistics |
-| High-throughput | 1000+ | 8+ hours | Database building |
 
 ### What You Get
 
@@ -316,16 +298,6 @@ Epoch 30: Loss = 0.089   ← Low (converged)
 Epoch 50: Loss = 0.042   ← Very low (well-trained)
 ```
 
-**Good signs:**
-- ✓ Smooth decrease
-- ✓ Stabilizes at low value (<0.1)
-- ✓ No sudden spikes
-
-**Bad signs:**
-- ✗ Not decreasing
-- ✗ Oscillating wildly
-- ✗ NaN or infinity
-
 #### What Loss Means
 
 Loss measures how well the model predicts noise:
@@ -340,11 +312,11 @@ Loss measures how well the model predicts noise:
 
 #### Physics Validation
 ```
-✓ PASSED: Minimum distance 1.23 Å
+PASSED: Minimum distance 1.23 Å
   → Structure is physically reasonable
   → Safe to analyze further
 
-✗ FAILED: Minimum distance 0.42 Å
+FAILED: Minimum distance 0.42 Å
   → Atoms overlapping!
   → Reject this structure
   → Generate another
