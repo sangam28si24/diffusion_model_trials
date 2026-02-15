@@ -2,3 +2,4 @@ crystal/
 .env
 __pycache__/
 outputs/
+outputs_2/
