@@ -144,7 +144,7 @@ This adds one more dimension: all tensors become `(batch_size, ...)`, so positio
 
 ---
 
-### Cell 5 — `create_diffusion_schedule(T, beta_start, beta_end)` → `dict`
+### Cell 5: `create_diffusion_schedule(T, beta_start, beta_end)` → `dict`
 
 **What it does:** Pre-computes all the noise scaling factors for every timestep from t=0 to t=T-1.
 
