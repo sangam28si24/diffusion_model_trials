@@ -159,14 +159,14 @@ This adds one more dimension: all tensors become `(batch_size, ...)`, so positio
 
 **Derived quantities (all stored in the returned `dict`):**
 
-| Key | Formula | Shape | Meaning |
-|---|---|---|---|
-| `betas` | `linspace(β_start, β_end, T)` | (T,) | Noise variance at each step |
-| `alphas` | `1 - betas` | (T,) | Signal retained at each step |
-| `alphas_cumprod` (ᾱ_t) | `cumprod(alphas)` | (T,) | Cumulative signal from t=0 to t |
-| `sqrt_alphas_cumprod` | `√ᾱ_t` | (T,) | How much of the original signal remains |
-| `sqrt_one_minus_alphas_cumprod` | `√(1-ᾱ_t)` | (T,) | How much noise is mixed in |
-| `posterior_variance` | `betas · (1-ᾱ_{t-1}) / (1-ᾱ_t)` | (T,) | Noise added during reverse step |
+| Key | Formula | Meaning |
+|---|---|---|
+| `betas` | `linspace(β_start, β_end, T)` | Noise variance at each step |
+| `alphas` | `1 - betas` | Signal retained at each step |
+| `alphas_cumprod` (ᾱ_t) | `cumprod(alphas)` | Cumulative signal from t=0 to t |
+| `sqrt_alphas_cumprod` | `√ᾱ_t` | How much of the original signal remains |
+| `sqrt_one_minus_alphas_cumprod` | `√(1-ᾱ_t)` | How much noise is mixed in |
+| `posterior_variance` | `betas · (1-ᾱ_{t-1}) / (1-ᾱ_t)` | Noise added during reverse step |
 
 **Concrete values at key timesteps:**
 
