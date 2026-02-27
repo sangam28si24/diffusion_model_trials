@@ -1,7 +1,5 @@
 ## Quick Start
 
-### First Time User (Complete Pipeline)
-
 ```
 1. Open the notebook
 2. Run ALL cells in order (Shift+Enter on each)
