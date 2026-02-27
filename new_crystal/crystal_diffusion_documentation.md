@@ -1,7 +1,7 @@
 # Crystal Diffusion Model
 
 ---
-This notebook builds an **AI that generates brand-new crystal structures** (like atoms arranged in a solid material). It does this using a technique called a **Diffusion Model** — the same core idea behind AI image generators like Stable Diffusion, but applied to materials science.
+This notebook thanks about an **Diffusion model that generates brand-new crystal structures** (like atoms arranged in a solid material). It does this using a technique called a **Diffusion Model**, the same core idea behind AI image generators like Stable Diffusion, but applied to materials science.
 
 **The big idea in plain English:**
 1. Take real crystal structures (like Aluminum, Iron, Diamond)
