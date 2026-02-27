@@ -41,38 +41,6 @@ This model **learns** from existing crystal structures and **generates** new one
 2. **Generation Phase**: Create new structures from random noise
 3. **Validation Phase**: Check if structures follow physics laws
 
-### Key Improvements in This Version
-
-#### 1. Doubled Dataset Size
-- **Before**: 9 structures
-- **After**: 21 structures
-- **Composition**:
-  - 3 base structures (FCC, BCC, Diamond)
-  - 18 augmented variants (6 per base type)
-  - Multiple augmentation strategies
-
-#### 2. Enhanced Visualizations
-- Training loss curves
-- Forward diffusion process (noise addition)
-- Reverse diffusion process (denoising)
-- Structure comparisons (real vs generated)
-- Batch statistical analysis
-- Distribution histograms
-- Correlation plots
-
-#### 3. Batch Generation Capability
-- Generate 10, 50, 100+ structures in one go
-- Statistical analysis across batches
-- Automated saving to files
-- Success rate tracking
-
-#### 4. Comprehensive Documentation
-- Usage guide for non-ML researchers
-- ML concepts explained for materials scientists
-- Step-by-step walkthroughs
-- Troubleshooting guides
-
----
 
 ## Usage Modes
 
