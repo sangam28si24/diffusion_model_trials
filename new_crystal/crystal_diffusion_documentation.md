@@ -87,12 +87,12 @@ After adding noise, positions are wrapped back using `% 1.0` (periodic boundary 
 #### `__getitem__(self, idx)`
 Fetches one structure and returns padded tensors:
 
-| Tensor | Shape | dtype | Meaning |
-|---|---|---|---|
-| `positions` | `(8, 3)` | float32 | Fractional coordinates of atoms. Rows beyond n_atoms are all zeros (padding) |
-| `atom_types` | `(8,)` | int64 | Atomic number (C=6, Al=13, Fe=26). Zero for padding |
-| `lattice` | `(3, 3)` | float32 | The 3 lattice vectors. Each row is a vector in Angstroms |
-| `mask` | `(8,)` | float32 | 1 for real atoms, 0 for padding |
+| Tensor | dtype | Meaning |
+|---|---|---|
+| `positions` | float32 | Fractional coordinates of atoms. Rows beyond n_atoms are all zeros (padding) |
+| `atom_types` | int64 | Atomic number (C=6, Al=13, Fe=26). Zero for padding |
+| `lattice` | float32 | The 3 lattice vectors. Each row is a vector in Angstroms |
+| `mask` | float32 | 1 for real atoms, 0 for padding |
 
 **The mask is critical.** Without it, the model would try to learn about padding zeros as if they were real atoms, corrupting the training.
 
